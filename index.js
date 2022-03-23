@@ -13,6 +13,14 @@ function updateRemainingCharacters(event) {
 
   //This updates the text of the span with "remaining-chars" id
   remainingCharsElement.textContent = remainingCharacters;
+
+  //This adds a css class which applies red color to the element of "remaining-chars" when chars < 10 and removes it (removes the color) when chars >= 10
+  if (remainingCharacters < 10) {
+      remainingCharsElement.classList.add("warning");
+  }
+  else {
+      remainingCharsElement.classList.remove("warning");
+  }
 }
 
 //This adds event listener to the input event of this element and executes the fuction pdateRemainingCharacters when the event occurs
